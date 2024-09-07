@@ -1,6 +1,8 @@
 #!/bin/bash
 
 # Variables
+GITHUB_REPOSITORY="https://github.com/RomilMovaliya/DemoPractical.git"
+
 DIRECTORY_OF_PROJECT ="$1" # that shows Project directory path (Here We Passed as an argument)
 
 DIRECTORY_OF_BACKUP ="$2"  # that shows Backup directory path (This is a directory Where backups will be stored)
@@ -17,6 +19,9 @@ WEBHOOK_URL="https://webhook.site/a5d27956-9dbc-4381-9af4-f844032beb07" # Just c
 
 # Now we Create a backup directory if it is does not exist
 mkdir -p "$DIRECTORY_OF_BACKUP"
+
+# Here we are Cloning FROM GitHub repository TO DIRECTORY_OF_PROJECT
+git clone "$GITHUB_REPOSITORY" "$DIRECTORY_OF_PROJECT"
 
 # Create a backup
 zip -r "$DIRECTORY_OF_BACKUP/$NAME_OF_THE_BACKUP" "$DIRECTORY_OF_PROJECT"
