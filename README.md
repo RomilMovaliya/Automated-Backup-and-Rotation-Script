@@ -130,3 +130,9 @@ Now we are mount this connection on local drive. we simply write,
 <img src="https://github.com/RomilMovaliya/DemoPractical/blob/main/google_drive_result.JPG" alt="Google_drive_view">
 <p>Here we get notification using curl to the webhook's dashboard.</p>
 <img src="https://github.com/RomilMovaliya/DemoPractical/blob/main/webhook_result.JPG" alt="webhook_view">
+
+<p>⏰ Here we can also schedule the Job using Cronjob</p>
+<p>
+  <li>For example, If i want to daily execte the script at daily 2 AM, add the following line in your crobtab. </li>
+  <li><b>0 2 * * * /home/DevOps/backup.sh  /home/DevOps/Github_local_repo  /home/DevOps/backupwala</b></li>
+</p>
