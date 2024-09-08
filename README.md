@@ -85,6 +85,8 @@ Now we are mount this connection on local drive. we simply write,
 <br>
 <br>
 <h2>About <mark>Retention function</mark></h2>
+<img src="https://github.com/RomilMovaliya/DemoPractical/blob/main/retention_function.jpg" alt="retention_function.jpg"><br>
+
 <h2>Deletes the older backups than retention day.</h2>
 <ul>
 <li><mark>find DIRECTORY_OF_BACKUP : </mark> that means it search for directory that is matched by variable name. </li>
