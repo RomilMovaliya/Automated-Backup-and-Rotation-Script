@@ -35,6 +35,25 @@
 <li>Here we are configuring rclone using Google Drive. Run the following command for Google Drive remote,</li>
 
 <li><mark>rclone config</mark></li>
+<li><b>New remote</b> : Here we are enter <mark>n</mark> for new remote connection after that we add the name. </li>
+<li><b>Storage</b> : Here we are enter <mark>17</mark> for google drive storage. because it provides different variety of storage solution.</li>
+<li><b>Client id</b> : Simply press <mark>Enter</mark> it will select defualt.</li>
+<li><b>Client secret</b> : Simply press <mark>Enter</mark> it will select defualt.</li>
+<li><b>Scope</b> : Here we select the number <mark>1</mark> for full access all files.</li>
+<li><b>Secret account file</b> :  Simply press <mark>Enter</mark> it will select defualt.</li>
+<li><b>Advanced config</b> :  Simply press <mark>Enter</mark> it will select defualt because currently i don't need any advanced config.</li>
+<li><b>Use auto config</b> :  Simply press <mark>y</mark>.</li></li><br>
+<img src="https://github.com/RomilMovaliya/DemoPractical/blob/main/RCLONE_CONFIG1.JPG" alt="RCLONE_CONFIG1.JPG"><br>
+<img src="https://github.com/RomilMovaliya/DemoPractical/blob/main/RCLONE_CONFIG2.JPG" alt="RCLONE_CONFIG2.JPG"><br>
+<img src="https://github.com/RomilMovaliya/DemoPractical/blob/main/RCLONE_CONFIG3.JPG" alt="RCLONE_CONFIG3.JPG"><br>
+<img src="https://github.com/RomilMovaliya/DemoPractical/blob/main/RCLONE_CONFIG4.JPG" alt="RCLONE_CONFIG4.JPG"><br>
+<br>
+
+After that click on the link and sign in.
+Now we are mount this connection on local drive. we simply write,
+<li><b>mkdir ~/mydirectory</b></li>
+<li><b>sudo chmod 755 ~/mydirectory</b></li>
+<li><b>rclone mount newgdrive_backup: ~/mydirectory</b></li>
 </ul>
 
 
@@ -56,6 +75,8 @@
 
 <br>
 <h2>Run the script</h2>
+<p>Before the run your script, you should assign the following permission.
+<li><b>sudo chmod +x ./backup.sh</b></li> </p>
 <p>Run <mark>backup.sh</mark> script with following parameter.</p>
 <li>./backup.sh /home/Devops/Github_local_repo/ /path/to/backup/directory</li>
 <li>Parameters:</li>
