@@ -101,3 +101,9 @@
 <li>The second line identifies files where the date in the filename corresponds to a Sunday, but it doesn’t perform any deletion or retention action by itself.</li>
 <li>The third line identifies files where the date in the filename is the 1st of the month, but again, it doesn’t perform any retention or deletion action directly.</li>
 </ul>
+
+<h2> 🏆 THE RESULT OF THE SCRIPT 🏆 </h2>
+<P>Here we can see the backups that basically store in the Google Drive.</P>
+<img src="https://github.com/RomilMovaliya/DemoPractical/blob/main/google_drive_result.JPG" alt="Google_drive_view">
+<p>Here we get notification using curl to the webhook's dashboard.</p>
+<img src="https://github.com/RomilMovaliya/DemoPractical/blob/main/webhook_result.JPG" alt="webhook_view">
