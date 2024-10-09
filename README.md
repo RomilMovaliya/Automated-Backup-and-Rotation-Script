@@ -21,12 +21,14 @@ You can watch the video of basic scenarios that we face in real-time!.👇Just c
 <h2>Prerequisites</h2>
 <p>Before using scripts, ensure that you have install some following necessary stuff.</p>
 
-<ol type="1">
-  <li><b>Git</b> : To clone your github project.</li>
-  <li><b>rclone</b> : To push backups to google drive.</li>
-  <li><b>curl</b> : To sends notification of successful backups.</li>
-</ol>
-<br>
+
+| **Configuration Tools**                          | **Configuration Tools Description**                 |
+|------------------------------------------------|-----------------------------------------|
+| 1. `Git`                                  | To clone your github project.                                   |
+| 2. `rclone `                                     | To push backups to google drive.                                    |
+| 3. `curl   `                                | To sends notification of successful backups                                  |
+                        
+
 
 <br>
 <h2>Installation of rclone</h2>
@@ -37,15 +39,21 @@ You can watch the video of basic scenarios that we face in real-time!.👇Just c
 
 <li>Here we are configuring rclone using Google Drive. Run the following command for Google Drive remote,</li>
 
-<li><mark>rclone config</mark></li>
-<li><b>New remote</b> : Here we are enter <mark>n</mark> for new remote connection after that we add the name. </li>
-<li><b>Storage</b> : Here we are enter <mark>17</mark> for google drive storage. because it provides different variety of storage solution.</li>
-<li><b>Client id</b> : Simply press <mark>Enter</mark> it will select defualt.</li>
-<li><b>Client secret</b> : Simply press <mark>Enter</mark> it will select defualt.</li>
-<li><b>Scope</b> : Here we select the number <mark>1</mark> for full access all files.</li>
-<li><b>Secret account file</b> :  Simply press <mark>Enter</mark> it will select defualt.</li>
-<li><b>Advanced config</b> :  Simply press <mark>Enter</mark> it will select defualt because currently i don't need any advanced config.</li>
-<li><b>Use auto config</b> :  Simply press <mark>y</mark>.</li></li><br>
+<br>
+
+| **rclone config key option**                          | **rclone config Description of option**                 |
+|------------------------------------------------|-----------------------------------------|
+| 1. `New remote`                                   | Here we are enter `n` for new remote connection after that we add the name.                                   |
+| 2. `Storage`                                       | Here we are enter `17` for google drive storage. because it provides different variety of storage solution.                          |
+| 3. `Client id`                                    | Simply press `Enter` it will select defualt.                                 |
+| 4. `Client secret`                                  | Simply press `Enter` it will select defualt.                                  |
+| 5. `Scope`                                  | Here we select the number `1` for full access all files.                                |
+| 6. `Secret account file`                                      | Simply press `Enter` it will select defualt.                           |
+| 7.  `Advanced config`                            | Simply press `Enter`  it will select defualt because currently i don't need any advanced config.                       |
+| 8.  `Use auto config`                            | Simply press `y`.                                |
+
+<br>
+
 <img src="https://github.com/RomilMovaliya/DemoPractical/blob/main/RCLONE_CONFIG1.JPG" alt="RCLONE_CONFIG1.JPG"><br>
 <img src="https://github.com/RomilMovaliya/DemoPractical/blob/main/RCLONE_CONFIG2.JPG" alt="RCLONE_CONFIG2.JPG"><br>
 <img src="https://github.com/RomilMovaliya/DemoPractical/blob/main/RCLONE_CONFIG3.JPG" alt="RCLONE_CONFIG3.JPG"><br>
@@ -54,18 +62,31 @@ You can watch the video of basic scenarios that we face in real-time!.👇Just c
 
 After that click on the link and sign in.
 Now we are mount this connection on local drive. we simply write,
-<li><b>mkdir ~/mydirectory</b></li>
-<li><b>sudo chmod 755 ~/mydirectory</b></li>
-<li><b>rclone mount newgdrive_backup: ~/mydirectory</b></li>
-</ul>
+ ```bash
+mkdir ~/mydirectory
+ ```
+
+ ```bash
+sudo chmod 755 ~/mydirectory
+ ```
+
+ ```bash
+rclone mount newgdrive_backup: ~/mydirectory
+```
 
 
 <h2>Creating necessary directories (Optional)</h2>
 <p>mkdir /home/DevOps/Github_local_repo/</p> 
 <p>if permission needed so adds the following permission, </p>
-<ul>
-<li>sudo chown romil:romil /home/DevOps/backupwala</li> 
-<li>sudo chmod 755 /home/DevOps/backupwala</li>
+
+ ```bash
+sudo chown romil:romil /home/DevOps/backupwala
+ ```
+
+ ```bash
+sudo chmod 755 /home/DevOps/backupwala
+ ```
+
 <li> Here romil(username):romil(groupname) and 755 that means user can read, write and can execute the file.</li>
 </ul>
 
@@ -73,14 +94,21 @@ Now we are mount this connection on local drive. we simply write,
 <h2>The use of Script</h2> 
 <p>Cloning the repository</p>
 <p>First of all, You should clone The Github repository to your local directory where the backup script create a backup.</p>
-<li>git clone https://github.com/RomilMovaliya/DemoPractical.git /home/DevOps/Github_local_repo/</li>
+
+```bash
+git clone https://github.com/RomilMovaliya/DemoPractical.git /home/DevOps/Github_local_repo/
+```
+
 <li><b>Note</b>: you use your own github repo which contains folder and files.</li>
 
 <br>
 <h2>Run the script</h2>
 <p>Before the run your script, you should assign the following permission.
-<li><b>sudo chmod +x ./backup.sh</b></li> </p>
-<p>Run <mark>backup.sh</mark> script with following parameter.</p>
+
+```bash
+sudo chmod +x ./backup.sh
+ ```
+<p>Run <b>backup.sh</b> script with following parameter.</p>
 <li>./backup.sh /home/Devops/Github_local_repo/ /path/to/backup/directory</li>
 <li>Parameters:</li>
 <mark>/home/Devops/Github_local_repo/</mark> ----> /path/to/local/project <br>
