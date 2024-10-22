@@ -111,42 +111,43 @@ sudo chmod +x ./backup.sh
 <p>Run <b>backup.sh</b> script with following parameter.</p>
 <li>./backup.sh /home/Devops/Github_local_repo/ /path/to/backup/directory</li>
 <li>Parameters:</li>
-<mark>/home/Devops/Github_local_repo/</mark> ----> /path/to/local/project <br>
-<mark>/home/Devops/backupwala</mark> ----> /path/to/backup/directory
+
+- `/home/Devops/Github_local_repo/` ----> /path/to/local/project <br>
+- `/home/Devops/backupwala` ----> /path/to/backup/directory
 <br>
 <br>
 <h2>About <mark>Retention function</mark></h2>
 <img src="https://github.com/RomilMovaliya/DemoPractical/blob/main/retention_function.jpg" alt="retention_function.jpg"><br>
 
 <h2>Deletes the older backups than retention day.</h2>
-<ul>
-<li><mark>find DIRECTORY_OF_BACKUP : </mark> that means it search for directory that is matched by variable name. </li>
-<li><mark>type -f : </mark>that means we are finding file instead of directory.</li>
-<li><mark>-name "*.zip" : </mark>that specify filter for file who contains .zip extension.</li>
-<li><mark>-mtime + $RETENTION_DAYS : </mark> which filter if the file modification time is more than VARIABLE($RETENTION_DAYS) days ago.</li>
-<li><mark>-exec rm {} / :</mark> here it removes the file and {} replace with file name founded.</li>
-</ul>
+
+- `find DIRECTORY_OF_BACKUP` : </mark> that means it search for directory that is matched by variable name.
+- `type -f` : </mark>that means we are finding file instead of directory.
+- `-name "*.zip"` : </mark>that specify filter for file who contains .zip extension.
+- `-mtime + $RETENTION_DAYS` : </mark> which filter if the file modification time is more than VARIABLE($RETENTION_DAYS) days ago.
+- `-exec rm {} /` :</mark> here it removes the file and {} replace with file name founded.
+
 
 <br>
 <h2>To keeping last 4 weeks backup.</h2>
-<ul>
-<li><mark>find "$DIRECTORY_OF_BACKUP" </mark> : That Starts for search within the specified directory.</li>
-<li><mark>-type f -name "*.zip</mark> : It basically filter out the type should be file instead of directory and name must be end with .zip extension</li>
-<li><mark>-exec bash -c '...' \</mark> : It executes the bash command for each founded file. and allows us to run custom command.</li>
-<li><mark>$(basename {} .zip | cut -d"_" -f2)</mark> : Here basename {} .zip that removes the .zip extension from the file and cut -d"_" -f2 that extract the date from the filename.</li>
-<li><mark>$(date -d ... +%u)</mark> : Here It convert the extracted date into the numeric day of a week.(ex, 1 -> monday, 7-> sunday)</li>
-<li><mark>(( $(date -d ... +%u) == 7 ))</mark> : It checks the day of a week is sunday then it gives true. if it was backuped on sunday.</li>
-</ul>
+
+- `find "$DIRECTORY_OF_BACKUP"`  : That Starts for search within the specified directory.
+- `-type f -name "*.zip` : It basically filter out the type should be file instead of directory and name must be end with .zip extension.
+- ` -exec bash -c '...' \` : It executes the bash command for each founded file. and allows us to run custom command.
+- `$(basename {} .zip | cut -d"_" -f2)` : Here basename {} .zip that removes the .zip extension from the file and cut -d"_" -f2 that extract the date from the filename.
+- `$(date -d ... +%u)` : Here It convert the extracted date into the numeric day of a week.(ex, 1 -> monday, 7-> sunday)
+- `(( $(date -d ... +%u) == 7 ))` : It checks the day of a week is sunday then it gives true. if it was backuped on sunday.
+
 
 <h2>To keeping 1st day of month backup.</h2>
-<ul>
-<li><mark>find "$DIRECTORY_OF_BACKUP"</mark> :  Same as before.</li>
-<li><mark>-type f -name "*.zip"</mark> : Same filtering. </li>
-<li><mark>-exec bash -c '...' \;</mark> : Executes a bash command for each file found. </li>
-<li><mark>$(basename {} .zip | cut -d"_" -f2)</mark> : Same extraction of the date part from the filename.</li>
-<li><mark>$(date -d ... +%d)</mark> : Converts the extracted date into the day of the month.</li>
-<li><mark>(( $(date -d ... +%d) == 1 ))</mark> : Checks if the day of the month is the 1st. This test returns true if the file is a backup from the 1st of the month.</li>
-</ul>
+
+- `find "$DIRECTORY_OF_BACKUP` :  Same as before.
+- `-type f -name "*.zip" ` : Same filtering. 
+- `-exec bash -c '...' \; ` : Executes a bash command for each file found. 
+- `$(basename {} .zip | cut -d"_" -f2) ` : Same extraction of the date part from the filename.
+- `$(date -d ... +%d) ` : Converts the extracted date into the day of the month.
+- `(( $(date -d ... +%d) == 1 )) ` : Checks if the day of the month is the 1st. This test returns true if the file is a backup from the 1st of the month.
+
 
 <br>
 <h2> KEY POINTS OF RETENTION PROCESS LINES </h2>
