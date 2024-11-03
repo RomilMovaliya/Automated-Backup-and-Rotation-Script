@@ -3,7 +3,7 @@
 - Here this script basically automates the backup of github repository to local directory. It implements the Rotational backup strategy and pushes the backups to the Google Drive by using rclone. and it also send curl upon successful completion of backup process.</p>
 
 - You can watch the video of basic scenarios that we face in real-time!.👇Just click on the below <b>Thumbnail.</b><br><br>
-[![Thumbnail](https://github.com/RomilMovaliya/Automated-Backup-and-Rotation-Script/blob/main/thumbnail.jpg)](https://drive.google.com/file/d/1Zskkztam-khKPH1n4gLKK1GiMl4siX-k/view?usp=sharing)
+[![Thumbnail](https://github.com/RomilMovaliya/Automated-Backup-and-Rotation-Script/blob/main/thumbnail.jpg)](https://youtu.be/XT-DtOdi4Zs)
 
 
 <h2>Features</h2>
